@@ -1,20 +1,22 @@
-appPadreCarrito.component("item-carro",{
+appPadreCarrito.component("Producto",{
+    data(){
+        return{
+            contador:0,
+        }
+    },
     props:{
         codigo:{
             default:"0000"
         },
         nombre:{
-            default:"hola"
+            default:"Item"
         },
         precio:{
-            default:990
+            default:"No disponible",
         },
         url:{
             default:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png"
         },
-        cantidad:{
-            default:0
-        }
     
     }
     
@@ -29,12 +31,12 @@ appPadreCarrito.component("item-carro",{
         <h2>$ {{precio}}</h2>  
         <div class="cantidad">
             <p class="cantidadTitle">Cantidad</p>
-            <i class="fa fa-minus-square-o" aria-hidden="true"></i>
+            <i class="fa fa-minus-square-o" aria-hidden="true" @click="CompoEvento3"></i>
             <div class="numero">
-                <p>{{cantidad}}</p>
+                <p>{{contador}}</p>
             </div>
-            <i class="fa fa-plus-square-o" aria-hidden="true"></i>        
-            <button class="alCarrito">
+            <i class="fa fa-plus-square-o" aria-hidden="true" @click="CompoEvento2"></i>        
+            <button class="alCarrito" @click="CompoEvento1">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 <p>Añadir al Carro</p>
             </button>
@@ -44,9 +46,24 @@ appPadreCarrito.component("item-carro",{
    
     
     methods:{
-        evento1(){
-            this.$emit("item-agregado")
-        }
+        CompoEvento1(){
+            this.$emit("item-agregado",{
+                cantidad:this.contador, 
+                codigo:this.codigo,
+                precio:this.precio,
+                nombre:this.nombre,
+                url:this.url,
+            })
+        },
+        CompoEvento2(){
+            this.contador+=1;
+        },
+        CompoEvento3(){
+            if(this.contador<1){
+                return;
+            }
+            this.contador-=1;
+        },
 
     },
     computed:{},

@@ -12,6 +12,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="js/appPadre.js"></script>
     <script src="componentes/ItemCarrito.js"></script>
+    <script src="componentes/EnCarro.js"></script>
 
 
 </head>
@@ -22,22 +23,26 @@
         <div class="span" @click="agregarActive">
             <p > carrito - <i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
         </div>
-        <div class="listaCompras">
-            <!-- asumo que aqui va un v-for -->
+        <div class="listaCompras" :class="active">
+
+            <div v-for="(item,index) in actualCarrito">
+               <Carro></Carro>
+            </div>
+
         </div>
     </div>
-    <item-carro nombre="que tal"></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
-    <item-carro></item-carro>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" > </Producto>
 
 </section>
 
