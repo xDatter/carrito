@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda virtual Vue</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/hoy.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/appPadre.js"></script>
+    <script src="componentes/ItemCarrito.js"></script>
+
+
+</head>
+<body>
+    
+<section id="contenedorPrincipal">
+    <div class="carroCompras" :class="active"  >
+        <div class="span" @click="agregarActive">
+            <p > carrito - <i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+        </div>
+        <div class="listaCompras">
+            <!-- asumo que aqui va un v-for -->
+        </div>
+    </div>
+    <item-carro nombre="que tal"></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+    <item-carro></item-carro>
+
+</section>
+
+
+
+
+
+
+<script>
+    appPadreCarrito.mount("#contenedorPrincipal");
+</script>
+    
+</body>
+
+
+</html>

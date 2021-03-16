@@ -1,0 +1,193 @@
+*
+{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body
+{
+    min-height: 100vh;
+}
+.listaCompras{
+    right: 20px;
+    top: calc(100% - 99%);
+    width: 100%;
+    height: 98%;
+    background: #ffffff;
+    border-left: solid 1px #000;
+    border-radius: 10px;
+    overflow-y: scroll;
+    z-index: 150;
+
+}
+.carroCompras
+{
+    position: fixed;
+    right: -70px;
+    top: calc(50% - 20px);
+    width: 150px;
+    height: 60px;
+    background: #bb0000;
+    border: solid 3px #000;
+    box-shadow: #000 0px 0 0px;
+    border-radius: 30px;
+    z-index: 150;
+    overflow: hidden;
+    transition: .5s;
+}
+.carroCompras:hover
+{
+    right: -30px;
+}
+.carroCompras .span p
+{
+    display: inline;
+    text-shadow: #000 1px 1px 3px;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 3em;
+    color: #fff;
+    cursor: pointer;
+}
+.carroCompras .span p::before
+{
+    content: "";
+}
+.carroCompras.active .span p::before
+{
+    content: "Cerrar ";
+}
+.carroCompras.active
+{
+    right: 20px;
+    top: calc(100% - 99%);
+    width: 50%;
+    height: 98%;
+    box-shadow: #000 -5px 0 40px;
+    border-radius: 10px;
+
+}
+
+#contenedorPrincipal
+{
+    display: flex;
+    width: 95%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contenedorItem
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 5px;
+    border: solid 1px #000;
+    border-radius: 10px;
+    width: 300px;
+    max-height: 400px;
+    padding: 10px;
+}
+h1, h4, h2, div
+{
+    width: 100%;
+    margin: 5px 0;
+}
+.contenedorItem h1
+{
+    font-size: 1.5em;
+}
+
+.contenedorItem h4
+{
+    font-size: 10px;
+    color: #aaa;
+}
+.contenedorItem img
+{
+    height: 100px;
+    width: unset;
+    border-radius: 5px;
+}
+.cantidad .numero
+{
+    width: 20%;
+    height: 50px;
+    border: solid 1px #fff;
+    display: flex;    
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    border-radius: 5px;
+
+}
+.contenedorItem .cantidad
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #eee;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.contenedorItem .cantidad .cantidadTitle
+{
+    font-weight: 100;
+    font-size: 1em;
+    width: 50%;
+    padding-left: 10px;
+    line-height: 2em;
+}
+.contenedorItem .cantidad i
+{
+    font-size: 2em;
+    margin: auto;
+    transition: .2s;
+}
+.contenedorItem .cantidad i:hover
+{
+color: #0af;
+}
+.contenedorItem .cantidad i:active
+{
+    color: #05a;
+}
+    
+.contenedorItem button
+{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: .2s;
+}
+.contenedorItem button:hover
+{
+    background: #df8;
+}
+.contenedorItem button:active
+{
+    background: #593;
+
+}
+.contenedorItem button .fa-shopping-cart
+{
+    position: relative;
+    font-size: 1.5em;
+    line-height: 1em;
+    left: 10px;
+}
+.contenedorItem button p
+{
+    font-size: 1em;
+    line-height: 1em;
+    width: 100%;
+ 
+}
+
