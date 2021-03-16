@@ -24,11 +24,11 @@
             <p > carrito - <i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
         </div>
         <div class="listaCompras" :class="active">
-
+            
             <div v-for="(item,index) in actualCarrito">
-               <Carro></Carro>
+                <Carro></Carro>
             </div>
-
+            <button @click="resetCarro">Quitar todo</button>
         </div>
     </div>
     <Producto @item-agregado="agregarCarrito" > </Producto>
