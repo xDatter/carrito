@@ -1,10 +1,10 @@
 appPadreCarrito.component("Carro",{
     data(){
         return{
-            contador:0,
+            contador:"",
         }
     },
-    props:["codigo","nombre","precio","url"]
+    props:["codigo","nombre","precio","url","cantidad"]
     
     ,
     template:
@@ -27,7 +27,7 @@ appPadreCarrito.component("Carro",{
         
             <div class="cantidadCarro">
                 <p class="cantidadTitleCarro">Cantidad </p>
-                <p>{{contador}}</p>
+                <p>{{cantidad}}</p>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@ appPadreCarrito.component("Carro",{
     methods:{
         CompoEvento1(){
             this.$emit("item-agregado",{
-                cantidad:this.contador, 
+                cantidad:this.cantidad, 
                 codigo:this.codigo,
                 precio:this.precio,
                 nombre:this.nombre,

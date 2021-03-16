@@ -26,12 +26,20 @@
         <div class="listaCompras" :class="active">
             
             <div v-for="(item,index) in actualCarrito">
-                <Carro></Carro>
+                <Carro :codigo="datosAlCarrito[index][1]" :nombre="datosAlCarrito[index][3]" :precio=datosAlCarrito[index][2] :url=datosAlCarrito[index][4] :cantidad=datosAlCarrito[index][0]></Carro>
             </div>
             <button @click="resetCarro">Quitar todo</button>
         </div>
+        <div class="totalCarro">
+            <div class="aPagarCarro">
+                <p></p>
+            </div>
+            <div class="botonPagar">
+                <button>Pagar</button>
+            </div>
+        </div>
     </div>
-    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="agregarCarrito" url="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" nombre="hola" precio=250  codigo="1923"> </Producto>
     <Producto @item-agregado="agregarCarrito" > </Producto>
     <Producto @item-agregado="agregarCarrito" > </Producto>
     <Producto @item-agregado="agregarCarrito" > </Producto>
