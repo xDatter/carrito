@@ -20,7 +20,7 @@
     
 <section id="contenedorPrincipal">
     <div class="carroCompras" :class="active"  >
-        <div class="span" @click="agregarActive">
+        <div class="span" @click="agregarActive" >
             <p > carrito - <i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
         </div>
         <div class="listaCompras" :class="active">
@@ -32,7 +32,7 @@
         </div>
         <div class="totalCarro">
             <div class="aPagarCarro">
-                <p></p>
+                <p>{{aPagarFinal}}</p>
             </div>
             <div class="botonPagar">
                 <button>Pagar</button>
@@ -40,7 +40,7 @@
         </div>
     </div>
     <Producto @item-agregado="agregarCarrito" url="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" nombre="hola" precio=250  codigo="1923"> </Producto>
-    <Producto @item-agregado="agregarCarrito" > </Producto>
+    <Producto @item-agregado="sumarItems" > </Producto>
     <Producto @item-agregado="agregarCarrito" > </Producto>
     <Producto @item-agregado="agregarCarrito" > </Producto>
     <Producto @item-agregado="agregarCarrito" > </Producto>

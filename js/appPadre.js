@@ -5,6 +5,7 @@ const appPadreCarrito=Vue.createApp({
             ElementosDif:0,
             datosAlCarrito:[],
             actualCarrito:[],
+            aPagarFinal:"3",
         }
     },
     methods:{
@@ -34,14 +35,23 @@ const appPadreCarrito=Vue.createApp({
             this.actualCarrito=[];
 
         },
-        sumarItemIgual(){
-            
-        },
-        restarItemIgual(){
-            
+        sumarItems(){
+            let totalItems=this.ElementosDif;
+            let sumaFinal=0;
+            let totalBox=0;
+
+            totalItems.forEach(box => {
+                totalBox=(this.datosAlCarrito[box][2])*this.datosAlCarrito[box][0];
+                sumaFinal+=totalBox;
+                console.log("hola "+totalBox);
+            });
+
+            this.aPagarFinal=sumaFinal;
+
         },
     },
     computed:{
     },
+
     
 })
