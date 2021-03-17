@@ -5,7 +5,7 @@ const appPadreCarrito=Vue.createApp({
             ElementosDif:0,
             datosAlCarrito:[],
             actualCarrito:[],
-            aPagarFinal:"3",
+            aPagarFinal:0,
         }
     },
     methods:{
@@ -14,11 +14,12 @@ const appPadreCarrito=Vue.createApp({
         },
         agregarCarrito(datos){
             let itemCompleto=[];
-            let unidades= datos.cantidad;
+            let unidades= Number(datos.cantidad);
             let verificador=datos.codigo;
-            let valor=datos.precio;
+            let valor=Number(datos.precio);
             let producto=datos.nombre;
             let imagen=datos.url;
+            let valorAlCarro=unidades*valor;
             itemCompleto.push(unidades);
             itemCompleto.push(verificador);
             itemCompleto.push(valor);
@@ -27,12 +28,14 @@ const appPadreCarrito=Vue.createApp({
             this.datosAlCarrito.push(itemCompleto);
             this.actualCarrito.push(this.ElementosDif);
             this.ElementosDif+=1;
+            this.aPagarFinal+=valorAlCarro;
 
         },
         resetCarro(){
             this.ElementosDif=0;
             this.datosAlCarrito=[];
             this.actualCarrito=[];
+            this.aPagarFinal=0;
 
         },
         sumarItems(){

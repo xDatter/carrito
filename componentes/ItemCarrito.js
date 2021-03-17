@@ -53,7 +53,8 @@ appPadreCarrito.component("Producto",{
                 precio:this.precio,
                 nombre:this.nombre,
                 url:this.url,
-            })
+            });
+            this.contador=0;
         },
         CompoEvento2(){
             this.contador+=1;
